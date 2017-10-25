@@ -28,7 +28,7 @@
     }
     .item {
         width: 14vw;
-        height: 14vw;
+        height: 14vw ;
 
         background-image: url('`.png');
         background-repeat: no-repeat;
@@ -52,21 +52,23 @@
     }
     
     @keyframes mie {
-  from {
-    transform: scale(1, 1);
-  }
-  33% {
-    transform: scale(1, 1.2);
-  }
-  66% {
-    transform: scale(1.2, 1);
+      from { transform: scale(1, 1); }
+      33% { transform: scale(1, 1.2); }
+      66% { transform: scale(1.2, 1); }
+      to { transform: scale(1, 1); }
+}
+    @keyframes boom{
+        from {
+    opacity: 1;
+    transform: translateZ(0) scale(1, 1);
   }
   to {
-    transform: scale(1, 1);
+    opacity: 0;
+    transform: translateZ(0) scale(1.75, 1.75);
   }
-}
+    }
 /*animation Play*/
-    .shake {
+    .shake { 
         animation: shake 16s linear infinite normal;
         -webkit-animation: shake 16s linear infinite normal;
     }
@@ -74,21 +76,25 @@
         animation: mie 0.2s linear ;
         -webkit-animation: mie 0.2s linear ;
     }
+    .shake:active{
+        animation: boom 0.1s cubic-bezier(0.16, 0.83, 0.35, 0.98) forwards;;
+        -webkit-animation: boom 0.1s cubic-bezier(0.16, 0.83, 0.35, 0.98) forwards;;
+    }
 </style>
 </head>
 <body>
 <div class="field">
     <div class="box">
-        <div class="item shake" id="bubble1" onmouseenter="dodge(event, this.id);"></div>
+        <div class="item shake" id="bubble1"></div>
     </div>
     <div class="box">
-        <div class="item shake" id="bubble2" onmouseenter="dodge(event, this.id);"></div>
+        <div class="item shake" id="bubble2"></div>
     </div>
     <div class="box">
-        <div class="item shake" id="bubble3" onmouseenter="dodge(event, this.id);"></div>
+        <div class="item shake" id="bubble3"></div>
     </div>
     <div class="box">
-        <div class="item shake" id="bubble4" onmouseenter="dodge(event, this.id);"></div>
+        <div class="item shake" id="bubble4"></div>
     </div>
     
 
