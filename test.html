@@ -2,7 +2,7 @@
 <html>
 <head>
     <title></title>
-<script src="bubble.js" type="text/javascript"></script>
+<!-- <script src="bubble.js" type="text/javascript"></script> -->
 <style>
     .playground {
         width:800px;
@@ -22,16 +22,17 @@
         height: 300px;
     }
     .box{
-        width:120px;
-        height:120px;
+        width:16vw;
+        height:16vw;
         float:left;
     }
     .item {
-        width: 100px;
-        height: 100px;
-        position: relative;
+        width: 14vw;
+        height: 14vw;
 
-        background-image: url('`.png')
+        background-image: url('`.png');
+        background-repeat: no-repeat;
+        background-size: contain;
         /*background: grey;*/
         /*border: solid, black, 2px;*/
         /*border-radius: 125px;*/
@@ -49,11 +50,29 @@
         50% { -webkit-transform: translateX(-10px); }
         100% { -webkit-transform: translateX(10px); }
     }
- 
+    
+    @keyframes mie {
+  from {
+    transform: scale(1, 1);
+  }
+  33% {
+    transform: scale(1, 1.2);
+  }
+  66% {
+    transform: scale(1.2, 1);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
 /*animation Play*/
     .shake {
         animation: shake 16s linear infinite normal;
         -webkit-animation: shake 16s linear infinite normal;
+    }
+    .shake:hover{
+        animation: mie 0.2s linear ;
+        -webkit-animation: mie 0.2s linear ;
     }
 </style>
 </head>

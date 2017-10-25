@@ -32,7 +32,7 @@ function dodge(event, object){
             count++;
         }
         
-     }, 10)
+     }, 30)
      // clearInterval(id);
     
 
