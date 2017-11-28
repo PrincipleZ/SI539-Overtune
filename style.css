@@ -39,7 +39,7 @@
         grid-row:1/5;
     }
     .box2{
-        padding-top: 10%;
+        padding-top: 20%;
         grid-column: 6/8;
         grid-row: 6/10;
     }
@@ -52,7 +52,8 @@
     }
     .box4{
         grid-column: 6;
-        grid-row: 4/6;
+        grid-row: 5/7;
+        margin-bottom: 5%;
     }
     .box5{
         grid-column: 5/7;
@@ -78,18 +79,48 @@
         max-width: 200px;
     }
     @keyframes shake {
-        20%{ transform: translate(-5px, -5px); }
-        40%{ transform: translate(-10px); }
-        60% {transform: translate(0px, 5px);}
-        80% {transform: translate(10px);}
+        20%{ transform: translate(-3px, -3px); }
+        40%{ transform: translate(-8px); }
+        60% {transform: translate(0px, 3px);}
+        80% {transform: translate(8px);}
         100%{ transform: translate(0px, 0px); }
     }
     @-webkit-keyframes shake {
-        0% { -webkit-transform: translateX(10px); }
-        50% { -webkit-transform: translateX(-10px); }
-        100% { -webkit-transform: translateX(10px); }
+        20%{ transform: translate(-3px, -3px); }
+        40%{ transform: translate(-8px); }
+        60% {transform: translate(0px, 3px);}
+        80% {transform: translate(8px);}
+        100%{ transform: translate(0px, 0px);}
     }
     
+    @keyframes shake1 {
+        20%{ transform: translate(0px, 3px); }
+        40%{ transform: translate(-8px); }
+        60% {transform: translate(-3px, -3px);}
+        80% {transform: translate(8px);}
+        100%{ transform: translate(0px, 0px); }
+    }
+    @-webkit-keyframes shake1 {
+        20%{ transform: translate(0px, 3px); }
+        40%{ transform: translate(-8px); }
+        60% {transform: translate(-3px, -3px);}
+        80% {transform: translate(8px);}
+        100%{ transform: translate(0px, 0px);}
+    }
+    @keyframes shake2 {
+        20%{ transform: translate(8px); }
+        40%{ transform: translate(0px, 3px);}
+        60% {transform: translate(-8px); }
+        80% {transform: translate(-3px, -3px);}
+        100%{ transform: translate(0px, 0px); }
+    }
+    @-webkit-keyframes shake2 {
+        20%{ transform: translate(8px); }
+        40%{ transform: translate(0px, 3px);}
+        60% {transform: translate(-8px); }
+        80% {transform: translate(-3px, -3px);}
+        100%{ transform: translate(0px, 0px); }
+    }
     @keyframes mie {
       from { transform: scale(1, 1); }
       33% { transform: scale(1, 1.2); }
@@ -111,11 +142,19 @@
         animation: shake 16s linear infinite normal;
         -webkit-animation: shake 16s linear infinite normal;
     }
-    .shake:hover{
+    .shake1{
+        animation: shake1 16s linear infinite normal;
+        -webkit-animation: shake1 16s linear infinite normal;
+    }
+    .shake2{
+        animation: shake2 16s linear infinite normal;
+        -webkit-animation: shake2 16s linear infinite normal;
+    }
+    .item:hover{
         animation: mie 0.2s linear ;
         -webkit-animation: mie 0.2s linear ;
     }
-    .shake:active{
+    .item:active{
         animation: boom 0.1s cubic-bezier(0.16, 0.83, 0.35, 0.98) forwards;;
         -webkit-animation: boom 0.1s cubic-bezier(0.16, 0.83, 0.35, 0.98) forwards;;
     }
