@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width user-scalable=no">
+    <title>Metronome</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/metronome.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <script src="http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script>
+    <script src="js/metronome.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="logo"><a href="index.html"><img src="img/logo.png" alt="logo"></a></li>
+          <li><a href="instrument.html">INSTRUMENTS</a></li>
+          <li><a href="tunningbox.html">TUNING BOX</a></li>
+          <li><a href="#">METRONOME</a></li>
+        </ul>    
+      </nav>
+    </header>
+
+    <section id = "main">
+      <div id="tempoBox"><h3>TEMPO</h3> <span id="showTempo">120</span><h3>BPM</h3> 
+        <input id="tempo" type="range" min="30.0" max="160.0" step="1" value="120" onInput="tempo = event.target.value; document.getElementById('showTempo').innerText=tempo;">
+      </div>
+
+      <a class="play" onclick="this.innerText = play();"><div id="playBox"><img src="img/play.png" alt="play"></div></a>
+
+      <div id="resolutionBox"><h3>RESOLUTION</h3><select onchange="noteResolution = this.selectedIndex;"><option>16th notes<option>8th notes<option>Quarter notes</select></div>  
+    </section>
+
+    <footer>
+      Copyright © 2017 SI539 Overtune. All rights reserved.
+    </footer>
+
+   </body>
+</html>
