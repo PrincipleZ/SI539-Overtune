@@ -6,6 +6,8 @@
     <title>Tuning box</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/tuninngbox.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/sound.js" type="text/javascript"></script>
   </head>
   <body>
     <header>
@@ -30,14 +32,32 @@
     <section class="playtune">
       <img src="img/guitar.png">
       <div class="left">
-        <div class="play">D</div>
-        <div class="play">A</div>
-        <div class="play">E</div>
+        <div class="play" id="playD">D
+          <audio id="D" preload="auto">
+            <source src="sounds/4th_string_d.ogg" type="audio/ogg">
+          </audio></div>
+        <div class="play" id="playA">A
+          <audio id="A" preload="auto">
+            <source src="sounds/5th_string_a.ogg" type="audio/ogg">
+          </audio></div>
+        <div class="play" id="playE2">E
+          <audio id="E2" preload="auto">
+            <source src="sounds/6th_string_e.ogg" type="audio/ogg">
+          </audio></div>
       </div>
       <div class="right">
-        <div class="play">G</div>
-        <div class="play">B</div>
-        <div class="play">E</div>
+        <div class="play" id="playG">G
+          <audio id="G" preload="auto">
+            <source src="sounds/3rd_string_g.ogg" type="audio/ogg">
+          </audio></div>
+        <div class="play" id="playB">B
+          <audio id="B" preload="auto">
+            <source src="sounds/2nd_string_b.ogg" type="audio/ogg">
+          </audio></div>
+        <div class="play" id="playE4">E
+          <audio id="E4" preload="auto">
+            <source src="sounds/1st_string_e.ogg" type="audio/ogg">
+          </audio></div>
       </div>
     </section>
 

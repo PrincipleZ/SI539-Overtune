@@ -1,0 +1,21 @@
+$(document).ready(function(){
+    $('#playD').click(function(){
+        $('#D').get(0).play();
+        console.log("play");
+    });
+    $('#playA').click(function(){
+        $('#A').get(0).play();
+    });
+    $('#playE2').click(function(){
+        $('#E2').get(0).play();
+    });
+    $('#playG').click(function(){
+        $('#G').get(0).play();
+    });
+    $('#playB').click(function(){
+        $('#B').get(0).play();
+    });
+    $('#playE4').click(function(){
+        $('#E4').get(0).play();
+    });
+})
