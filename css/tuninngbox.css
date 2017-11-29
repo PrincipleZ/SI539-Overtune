@@ -16,7 +16,7 @@ select{
 	background: -webkit-linear-gradient(left, #9697a1, #7c8293); 
 	color: white;
 	font-size: 18px;
-	font-family: Calibri;
+	font-family: Calibri, sans-serif;
 }
 select option{
 	background: -webkit-linear-gradient(left, #9697a1, #7c8293); 
@@ -47,5 +47,5 @@ footer{
 	line-height: 80px;
 }
 .play:hover {
-	background-color: #e1e2e4;
+	background-color: #e1e2e4 !important;
 }

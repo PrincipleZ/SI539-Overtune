@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width user-scalable=no">
     <title>Tuning box</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+  src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"
+  integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE="
+  crossorigin="anonymous"></script>
+
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/tuninngbox.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="js/sound.js" type="text/javascript"></script>
   </head>
   <body>
@@ -33,11 +39,11 @@
       <img src="img/guitar.png">
       <div class="left">
         <div class="play" id="playD">D
-          <audio id="D" preload="auto">
+          <audio id="D" preload="auto" onended="checkLoop($(this))">
             <source src="sounds/4th_string_d.ogg" type="audio/ogg">
           </audio></div>
         <div class="play" id="playA">A
-          <audio id="A" preload="auto">
+          <audio id="A" preload="auto" onended="checkLoop($(this))">
             <source src="sounds/5th_string_a.ogg" type="audio/ogg">
           </audio></div>
         <div class="play" id="playE2">E
@@ -60,7 +66,7 @@
           </audio></div>
       </div>
     </section>
-
+    <input id="loop" type="checkbox"> Loop
     <footer>
       Copyright © 2017 SI539 Overtune. All rights reserved.
     </footer>
