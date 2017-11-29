@@ -37,7 +37,7 @@ class AudioProcessor {
 
   created () {
 
-    this.FFTSIZE = 2048;
+    this.FFTSIZE = 8192;
     this.stream = null;
     this.audioContext = new AudioContext();
     this.analyser = this.audioContext.createAnalyser();
