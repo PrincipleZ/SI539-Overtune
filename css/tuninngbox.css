@@ -55,10 +55,10 @@ footer{
 .play:hover {
 	background-color: #e1e2e4 !important;
 }
-.play:playing{
-  animation: pulse 2s linear 3;
-  -webkit-animation: pulse 2s linear 3;
-  -moz-animation: pulse 2s linear 3;
+.playing{
+  animation: pulse 2s linear infinite;
+  -webkit-animation: pulse 2s linear infinite;
+  -moz-animation: pulse 2s linear infinite;
   
 }
 
