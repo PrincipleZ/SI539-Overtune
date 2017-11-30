@@ -1,15 +1,18 @@
 var $currentloop = $('#D');
 
 function playing(elem){
+    $(elem).addClass("playing");
     $(elem).css({
             backgroundColor: '#e1e2e4'
         });
     $(elem).animate({
         backgroundColor: 'none'
     }, 4000);
+    
 }
 
 function checkLoop(elem){
+    $(elem).removeClass();
     if ($('#loop').prop('checked') == false){
         $currentloop.stop();
         $currentloop.removeAttr("data-loop");
@@ -23,6 +26,7 @@ function checkLoop(elem){
 }
 
 function setLoop(elem){
+    console.log("setloop")
     $currentloop.stop();
     $currentloop.removeAttr("data-loop");
     $currentloop = $(elem);
