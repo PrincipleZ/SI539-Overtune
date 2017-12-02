@@ -23,6 +23,7 @@ nav ul {
 nav li {
 	display: inline-block;
 	width: 150px;
+	height: 50px;
 	font-size: 18px;
 	text-align: right;
 	position: relative;
@@ -43,4 +44,16 @@ footer{
 	padding-top: 100px;
 	text-align: center;
 	color: grey;
+}
+
+
+nav li:hover {
+	filter: glow(color:white, strength=0);
+	text-shadow: 1px 1px 10px white;
+}
+.logo:hover {
+	background-image: none;
+}
+.selected {
+	background-image: url(../img/hoverli.png);
 }
