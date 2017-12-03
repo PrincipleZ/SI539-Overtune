@@ -23,6 +23,61 @@ JINJA_ENVIRONMENT = jinja2.Environment(
         os.path.dirname(__file__)))
 
 
+violin_dict = {
+    "TITLE": "VIOLIN",
+    "INSTRUMENT": "VIOLIN",
+    "INSTRUMENTS": "class=\"selected\"",
+    "AUDIO1": "sounds/violin/notes/1.ogg",
+    "AUDIO2": "sounds/violin/notes/2.ogg",
+    "AUDIO3": "sounds/violin/notes/3.ogg",
+    "AUDIO4": "sounds/violin/notes/4.ogg",
+    "AUDIO5": "sounds/violin/notes/5.ogg",
+    "AUDIO6": "sounds/violin/notes/6.ogg",
+    "AUDIO7": "sounds/violin/notes/7.ogg",
+    "AUDIO8": "sounds/violin/notes/8.ogg",
+    "RANGE_LOW": "G3",
+    "RANGE_HIGH": "A7",
+    "VIDEO0": "https://www.youtube.com/watch?v=zgaQFLUdUL0&list=RDP2Xdb1ljd3g&index=2",
+    "VIDEO1": "https://www.youtube.com/watch?v=bZ_BoOlAXyk",
+    "VIDEO2": "https://www.youtube.com/watch?v=mF3DCa4TbD0",
+    "THUMBNAIL0": "img/thumbnails/violin_01.jpg",
+    "THUMBNAIL1": "img/thumbnails/violin_02.jpg",
+    "THUMBNAIL2": "img/thumbnails/violin_03.jpg",
+    "ARTIST0": "",
+    "TITLE0": "",
+    "MUSIC0": "",
+    "ARTIST1": "",
+    "TITLE1": "",
+    "MUSIC1": "",
+    "ARTIST2": "",
+    "TITLE2": "",
+    "MUSIC2": "",
+    "TAG1_STYLE": "",
+    "TAG2_STYLE": "",
+    "RANGE_STYLE": "",
+    "INSTRUMENT_PIC": "img/violin1.png",
+    "INTRODUCTION": "A wooden string instrument in the violin family: the smallest and highest-pitched instrument."
+}
+guitar_dict = {}
+harp_dict = {}
+trumpet_dict = {}
+piano_dict = {}
+eguitar_dict = {}
+accordion_dict = {}
+sax_dict = {}
+
+instruments_dict = {
+    "violin": violin_dict,
+    "guitar": guitar_dict,
+    "harp": harp_dict,
+    "trumpet": trumpet_dict,
+    "piano": piano_dict,
+    "eguitar": eguitar_dict,
+    "accordion": accordion_dict,
+    "sax": sax_dict
+}
+
+
 class MainHandler(webapp2.RequestHandler):
 
     def get(self):
@@ -53,12 +108,17 @@ class MetroHandler(webapp2.RequestHandler):
 class InstrumentHandler(webapp2.RequestHandler):
 
     def get(self):
-        self.response.out.write(self.request.path)
+        instrument_name = self.request.path[1:]
+        print instrument_name
+
+        template_var = violin_dict
+        template = JINJA_ENVIRONMENT.get_template('instrumenttemplate.html')
+        self.response.out.write(template.render(template_var))
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/index', MainHandler),
     ('/tuner', TunerHandler),
     ('/metro', MetroHandler),
-    ('/instruments/.*', InstrumentHandler)
+    ('/.*', InstrumentHandler)
 ], debug=True)

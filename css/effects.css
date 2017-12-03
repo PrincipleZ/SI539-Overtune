@@ -1,0 +1,214 @@
+.videolist {
+	width: 300px;
+	text-align: left;
+	float: left;
+}
+.videolist p{
+	color: #999999;
+	font-size: 21px;
+}
+.play{
+margin-top: 25px;
+	padding: 10px;
+}
+#bar{
+	width: 100%;
+	height: 8px;
+	background-color: #CCCCCC;
+}
+#range{
+	width: 60%;
+	height: 8px;
+	background-color: #666666;
+	margin-left: 30%;
+}
+.tagcontent{}
+.tag1{
+	position: relative;
+	left: 70px; 
+	height: 36px;
+	width: 39px;
+	background-image: url(../img/tag.png);
+	background-repeat: no-repeat;
+	padding-left: 7px;
+	padding-top: 3px;
+	color: white;
+	font-size: 18px;
+	display: inline-block;
+}
+.tag2{
+	position: relative;
+	left: 200px; 
+	height: 36px;
+	width: 39px;
+	background-image: url(../img/tag.png);
+	background-repeat: no-repeat;
+	padding-left: 9px;
+	padding-top: 3px;
+	color: white;
+	font-size: 18px;
+	display: inline-block;
+}
+.VIDEOS{
+	display: inline-block;
+}
+.video{
+	width: 97px;
+}
+
+
+
+.musicplaylist {
+	width: 300px;
+	height: 300px;
+	float: right;
+}
+.playnow {
+	width: 300px;
+	height: 60px;
+	opacity: 1;
+	background: -webkit-linear-gradient(left, #9697a1, #7c8293); 	
+	text-align: left;
+}
+
+.cover{
+	float: left;
+}
+.playnow p{
+	margin: 0;
+	left: 50px;
+	color: white;
+	font-size: 18px;
+}
+.content{
+	margin-left: 20px;
+	margin-top: 10px;
+	float: left;
+	height: 50px;
+	width: 200px;
+}
+.volume{
+	float: right;
+	margin-top: 5px;
+}
+#all-progress {
+	margin-top:10px;
+	height: 3px;
+	background-color: white;
+}
+#current-progress {
+	height: 3px;
+	width: 90%;
+	background-color: #666666;
+}
+#progress-button {  
+    width: 10px;  
+    height: 10px;  
+    display: block;  
+    background-color: #CCCCCC;  
+    border-radius: 5px;  
+    position: relative;  
+    top:-3px;  
+    float: right;  
+}
+
+.list{
+	border-top: 2px solid white;
+	width: 300px;
+	height: 50px;
+	opacity: 0.8;
+	background: -webkit-linear-gradient(left, #9697a1, #7c8293); 	
+	text-align: left;
+	float: right;
+}
+.cover2{
+	margin-top: 0px;
+	height: 50px;
+	float: left;
+}
+.content2{
+	margin-left: 15px;
+	margin-top: 3px;
+	float: left;
+	height: 50px;
+	width: 200px;
+}
+.content2 p{
+	margin: 0;
+	left: 50px;
+	color: white;
+	font-size: 18px;
+}
+.play123{
+	width: 30px;
+	position: absolute;
+	left: 15px;
+	top: 12px;
+	opacity: 0.8;
+}
+.coverplay{
+	float: left;
+	position: relative;
+}
+.play123:hover {
+	opacity: 1;
+}
+
+.videolist2{
+	position: relative;
+	display: inline-block;
+}
+.video{
+	width: 97px;
+}
+.play1234{
+	width: 40px;
+	position: absolute;
+	left: 28px;
+	top: 25px;
+	opacity: 0.8;
+}
+.play1234:hover {
+	opacity: 1;
+}
+.intro{
+	width: 300px;
+	text-align: left;
+	margin-bottom: 30px;
+}
+.intro p{
+	color: #999999;
+	font-size: 21px;
+	margin-bottom: 0;
+}
+#instrmentnam{
+	font-weight: bold;
+}
+#introcontent{
+	padding-top: 0px;
+	font-size: 18px;
+}
+
+@media screen and (max-width: 800px){
+	.playtune{
+		width: 100%;
+	}
+	.videolist {
+		float: none;
+		display: block;
+		margin: 0 auto;
+	}
+	.musicplaylist{
+		padding-top: 30px;
+		float: none;
+		display: block;
+		margin: 0 auto;
+	}
+	.instrumentpicture{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 540px){
+	
+}

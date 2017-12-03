@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width user-scalable=no">
+    <title>Violin</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/instruments.css">
+    <link rel="stylesheet" type="text/css" href="css/effects.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/instruments.js"></script>
+    <script type="text/javascript" src="js/sound.js"></script>
+    <script src="js/effect.js"></script>
+    <script src="js/lity.js"></script>
+    <link href="css/lity.css" rel="stylesheet">
+
+    <!-- Insert to your webpage before the </head> -->
+    <script src="audioplayerengine/jquery.js"></script>
+    <script src="audioplayerengine/amazingaudioplayer.js"></script>
+    <link rel="stylesheet" type="text/css" href="audioplayerengine/initaudioplayer-1.css">
+    <script src="audioplayerengine/initaudioplayer-1.js"></script>
+    <!-- End of head section HTML codes -->
+
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="logo"><a href="index.html"><img src="img/logo.png" alt="logo"></a></li>
+          <li class="selected"><a href="instrument.html">INSTRUMENTS</a></li>
+          <li><a href="tunningbox.html">TUNING BOX</a></li>
+          <li><a href="metronome.html">METRONOME</a></li>
+        </ul>    
+      </nav>
+    </header>
+        <div class="scalecontainer">
+  <div class="holder item1"></div>
+  <div class="holder item2"></div>
+
+        <div class="play" id="playD">
+            <img src="img/do.png" class="item" id="do">
+                <audio id="D" preload="auto" onended="checkLoop($(this))">
+                    <source src="sounds/violin-do.wav" type="audio/wav">
+        </audio></div>
+
+        <div class="play" id="playA">
+            <img src="img/re.png" class="item" id="re">
+                <audio id="A" preload="auto" onended="checkLoop($(this))">
+                    <source src="sounds/violin-re.wav" type="audio/wav">
+        </audio></div>
+
+        <div class="play" id="playG">
+            <img src="img/mi.png" class="item" id="mi">
+                <audio id="G" preload="auto" onended="checkLoop($(this))">
+                    <source src="sounds/violin-mi.wav" type="audio/wav">
+        </audio></div>
+
+                <div class="play" id="playB">
+            <img src="img/fa.png" class="item" id="fa">
+                <audio id="B" preload="auto" onended="checkLoop($(this))">
+                    <source src="sounds/violin-fa.wav" type="audio/wav">
+        </audio></div>
+
+                <div class="play" id="playE4">
+            <img src="img/so.png" class="item" id="so">
+                <audio id="E4" preload="auto" onended="checkLoop($(this))">
+                    <source src="sounds/violin-so.wav" type="audio/wav">
+        </audio></div>
+
+        <div class="play" id="playX">
+            <img src="img/la.png" class="item" id="la">
+                <audio id="X" preload="auto" onended="checkLoop($(this))">
+                    <source src="sounds/violin-la.wav" type="audio/wav">
+        </audio></div>
+        
+        <div class="play" id="playY">
+            <img src="img/ti.png" class="item" id="ti">
+                <audio id="Y" preload="auto" onended="checkLoop($(this))">
+                    <source src="sounds/violin-ti.wav" type="audio/wav">
+        </audio></div>
+
+        <div class="play" id="playZ">
+            <img src="img/do2.png" class="item" id="do2">
+                <audio id="Z" preload="auto" onended="checkLoop($(this))">
+                    <source src="sounds/violin-do2.wav" type="audio/wav">
+        </audio></div>
+
+  <div class="holder item1"></div>
+  <div class="holder item2"></div>
+        </div>
+
+    <section class="playtune">
+
+    <section class="videolist">
+      <p>RANGE 
+        <div class="tagcontent"><div class="tag1">D</div><div class="tag2">E4</div><div>
+        <div id="bar"><div id="range"></div></div></p>
+
+      <p>RELATED VIDEOS</p>
+      <div href="https://www.youtube.com/embed/0dhkULi62z0" data-lity class="videolist2"><img class="video" src="img/musiccover.jpg" alt="video"><img class="play1" src="img/play.png" alt="play"></div>
+      <div href="https://www.youtube.com/embed/0dhkULi62z0" data-lity class="videolist2"><img class="video" src="img/musiccover.jpg" alt="video"><img class="play1" src="img/play.png" alt="play"></div>
+      <div href="https://www.youtube.com/embed/0dhkULi62z0" data-lity class="videolist2"><img class="video" src="img/musiccover.jpg" alt="video"><img class="play1" src="img/play.png" alt="play"></div>
+    </section>
+
+    <section class="musicplaylist">
+        <div class="intro">
+            <p id="instrumentname">INTRODUCTION</p>
+            <p id="introcontent">A wooden string instrument in the violin family: the smallest and highest-pitched instrument.</p>
+        </div>
+        <div style="margin:12px auto;">
+    
+    <!-- Insert to your webpage where you want to display the audio player -->
+    <div id="amazingaudioplayer-1" style="display:block;position:relative;width:100%;max-width:300px;height:auto;margin:0px auto 0px;">
+        <ul class="amazingaudioplayer-audios" style="display:none;">
+            <li data-artist="Avril Lavigne" data-title="When You&#039;re Gone" data-album="The Best Damn Thing" data-info="" data-image="" data-duration="241">
+                <div class="amazingaudioplayer-source" data-src="audios/When%20You%27re%20Gone-Avril%20Lavigne.mp3" data-type="audio/mpeg" />
+            </li>
+                        <li data-artist="Avril Lavigne" data-title="When You&#039;re Gone" data-album="The Best Damn Thing" data-info="" data-image="" data-duration="241">
+                <div class="amazingaudioplayer-source" data-src="audios/When%20You%27re%20Gone-Avril%20Lavigne.mp3" data-type="audio/mpeg" />
+            </li>
+                        <li data-artist="Avril Lavigne" data-title="When You&#039;re Gone" data-album="The Best Damn Thing" data-info="" data-image="" data-duration="241">
+                <div class="amazingaudioplayer-source" data-src="audios/When%20You%27re%20Gone-Avril%20Lavigne.mp3" data-type="audio/mpeg" />
+            </li>
+                        <li data-artist="Avril Lavigne" data-title="When You&#039;re Gone" data-album="The Best Damn Thing" data-info="" data-image="" data-duration="241">
+                <div class="amazingaudioplayer-source" data-src="audios/When%20You%27re%20Gone-Avril%20Lavigne.mp3" data-type="audio/mpeg" />
+            </li>
+        </ul>
+        <!-- <div class="amazingaudioplayer-engine"><a href="http://amazingaudioplayer.com" title="html5 audio player">audio player for website</a></div> -->
+    </div>
+    <!-- End of body section HTML codes -->
+
+</div>
+    </section>
+
+    <img class="instrumentpicture" src="img/violin1.png" >
+    <h3> VIOLIN </h3>
+    </section>
+
+
+    <section class="et-hero-tabs">
+<!-- <img src="img/violin1.png" class="centeredinstrument"> -->
+    <div class="et-hero-tabs-container">
+    <a class="et-hero-tab" href="#tab-es6" onmouseenter= "growUp(this)" onmouseleave="growDown(this)" style="
+        /*background-image: url('img/harp.png');
+        background-size: cover;
+        background-repeat: no-repeat;*/
+    "><img src="img/accordian1.png" class="centeredinstrument">
+</a>   
+    <a class="et-hero-tab" href="#tab-es6" onmouseenter= "growUp(this)" onmouseleave="growDown(this)" style="
+        /*background-image: url('img/harp.png');
+        background-size: cover;
+        background-repeat: no-repeat;*/
+    "><img src="img/piano1.png" class="centeredinstrument">
+</a>      
+    <a class="et-hero-tab" href="#tab-es6" onmouseenter= "growUp(this)" onmouseleave="growDown(this)" style="
+        /*background-image: url('img/harp.png');
+        background-size: cover;
+        background-repeat: no-repeat;*/
+    "><img src="img/harp1.png" class="centeredinstrument">
+</a>       
+    <a class="et-hero-tab" href="violin.html" onmouseenter= "growUp(this)" onmouseleave="growDown(this)" style="
+        /*background-image: url('img/violin2.png');
+        background-size: cover;
+        border-top-style: solid;
+        border-width: 5px;
+        background-repeat: no-repeat;*/
+    "><img src="img/violin1.png" class="centeredinstrument" >
+</a>      
+    <a class="et-hero-tab" href="violin.html" onmouseenter= "growUp(this)" onmouseleave="growDown(this)" style="
+        /*background-image: url('img/violin2.png');
+        background-size: cover;
+        border-top-style: solid;
+        border-width: 5px;
+        background-repeat: no-repeat;*/
+    "><img src="img/trumpet1.png" class="centeredinstrument" >
+</a>       
+    <a class="et-hero-tab" href="violin.html" onmouseenter= "growUp(this)" onmouseleave="growDown(this)" style="
+        /*background-image: url('img/violin2.png');
+        background-size: cover;
+        border-top-style: solid;
+        border-width: 5px;
+        background-repeat: no-repeat;*/
+    "><img src="img/electronicguitar1.png" class="centeredinstrument" >
+</a>   
+    <a class="et-hero-tab" href="violin.html" onmouseenter= "growUp(this)" onmouseleave="growDown(this)" style="
+        /*background-image: url('img/violin2.png');
+        background-size: cover;
+        border-top-style: solid;
+        border-width: 5px;
+        background-repeat: no-repeat;*/
+    "><img src="img/saxophone1.png" class="centeredinstrument" >
+</a>       
+    <a class="et-hero-tab" href="violin.html" onmouseenter= "growUp(this)" onmouseleave="growDown(this)" style="
+        /*background-image: url('img/violin2.png');
+        background-size: cover;
+        border-top-style: solid;
+        border-width: 5px;
+        background-repeat: no-repeat;*/
+    "><img src="img/guitar1.png" class="centeredinstrument" >
+</a>        
+    <span class="et-hero-tab-slider"></span>
+    </div>
+  </section>
+    <h5> Hover over an instrument to find out more</h5>
+
+    <footer>
+      Copyright © 2017 SI539 Overtune. All rights reserved.
+    </footer>
+
+   </body>
+</html>

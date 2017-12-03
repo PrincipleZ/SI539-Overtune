@@ -63,6 +63,9 @@ select option{
 	section{
 		width: 100%;
 	}
+	.play{
+		cursor:pointer;
+	}
 }
 @media screen and (max-width:540px){
 	section{
@@ -70,6 +73,9 @@ select option{
 	}
 	.moon{
 		display: none;
+	}
+	.play{
+		cursor:pointer;
 	}
 }
 
