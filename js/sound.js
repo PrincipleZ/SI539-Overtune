@@ -12,13 +12,13 @@ function playing(elem){
 }
 
 function checkLoop(elem){
+    console.log('hi');
     $(elem).parent().removeClass("playing");
     if ($('#loop').prop('checked') == false){
         $currentloop.stop();
         $currentloop.removeAttr("data-loop");
     }
     if ($(elem).attr('data-loop')){ 
-        console.log('hi');
         $(elem)[0].currentTime = 0;
         $(elem)[0].play();
         playing(elem.parent());
@@ -34,7 +34,7 @@ function setLoop(elem){
 }
 
 $(document).ready(function(){
-    $('#playD').click(function(){
+    $('#playD').on("click", function(){
         if ($('#loop').prop('checked')){
             setLoop($('#D'));
         }

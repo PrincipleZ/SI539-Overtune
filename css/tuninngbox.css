@@ -51,6 +51,7 @@ footer{
 	font-size: 36px;
 	margin-bottom: 50px;
 	line-height: 80px;
+  cursor:pointer;
 }
 .play:hover {
 	background-color: #e1e2e4 !important;
