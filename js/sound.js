@@ -34,6 +34,7 @@ function setLoop(elem){
 }
 
 $(document).ready(function(){
+    // $("audio").bind('ended', checkLoop(this));
     $('#playD').on("click", function(){
         if ($('#loop').prop('checked')){
             setLoop($('#D'));

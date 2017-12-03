@@ -43,8 +43,10 @@ function scheduleNote( beatNumber, time ) {
     else                        // other 16th notes = low pitch
         osc.frequency.value = 220.0;
 
-    osc.start( time );
-    osc.stop( time + noteLength );
+    if (osc.start) osc.start( time );
+    else osc.noteOn(time);
+    if (osc.stop) osc.stop( time + noteLength );
+    else osc.noteOff(time + noteLength);
 }
 
 function scheduler() {
@@ -79,7 +81,7 @@ function init(){
     // TO WORK ON CURRENT CHROME!!  But this means our code can be properly
     // spec-compliant, and work on Chrome, Safari and Firefox.
 
-    audioContext = new AudioContext();
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
     timerWorker = new Worker("js/metronomeworker.js");
 
