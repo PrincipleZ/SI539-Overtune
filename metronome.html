@@ -1,40 +1,65 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width user-scalable=no">
-    <title>Metronome</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+{% extends "index.html" %}
+
+{% block style %}
     <link rel="stylesheet" type="text/css" href="css/metronome.css">
+    <link rel="stylesheet" type="text/css" href="css/moonMap.css">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <script src="https://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script>
     <script src="js/metronome.js"></script>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li class="logo"><a href="index.html"><img src="img/logo.png" alt="logo"></a></li>
-          <li><a href="instrument.html">INSTRUMENTS</a></li>
-          <li><a href="tuningbox.html">TUNING BOX</a></li>
-          <li><a href="#">METRONOME</a></li>
-        </ul>    
-      </nav>
-    </header>
 
-    <section id = "main">
-      <div id="tempoBox"><h3>TEMPO</h3> <span id="showTempo">120</span><h3>BPM</h3> 
-        <input id="tempo" type="range" min="30.0" max="160.0" step="1" value="120" onInput="tempo = event.target.value; document.getElementById('showTempo').innerText=tempo;">
+    <!-- <script src="js/metronomeworker.js"></script> -->
+{% endblock %}
+{% block content%}
+
+    <section>
+      <div id="tempoBox"><p>TEMPO</p> <span id="showTempo">120</span><p>BPM</p> 
+        <input id="tempo" type="range" min="30.0" max="160.0" step="1" value="120" onInput="tempo = event.target.value; document.getElementById('showTempo').innerText=tempo; start(tempo);">
       </div>
 
-      <a class="play" onclick="this.innerText = play();"><div id="playBox"><img src="img/play.png" alt="play"></div></a>
+      <a class="play" onclick="play(); start(tempo);"><div id="center" class="orbit-center"><img src="img/play.png" alt="play", id = "playBox_icon"></div></a>
 
-      <div id="resolutionBox"><h3>RESOLUTION</h3><select onchange="noteResolution = this.selectedIndex;"><option>16th notes<option>8th notes<option>Quarter notes</select></div>  
+      <div id="resolutionBox"><p>RESOLUTION</p><select onchange="noteResolution = this.selectedIndex;"><option>Quarter notes<option>8th notes<option>16th notes</select></div>
+
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+      <span class="moonSelector"></span>
+       
+
+      <script type="text/javascript" src="js/moonMap.js"></script>
+      <script >
+        var map = new MoonMap('#center', {active: function(orbit){
+          var active = orbit.currentLyActive,
+              activeMoon = orbit.moons[active];
+
+              console.log("New moon is active");
+        },
+        activeClass: 'active',
+        moonSelector:'.moonSelector',
+        radius:250
+      });
+        function start(tempo){
+          if (!isPlaying){
+            console.log("here")
+            map.stopCarousel();
+          } else{
+            map.stopCarousel();
+            map.startCarousel((60/tempo) * 1000);
+          }
+        }
+
+      </script>  
     </section>
-
-    <footer>
-      Copyright © 2017 SI539 Overtune. All rights reserved.
-    </footer>
-
-   </body>
-</html>
+{% endblock %}

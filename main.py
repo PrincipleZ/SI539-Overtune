@@ -27,51 +27,38 @@ class MainHandler(webapp2.RequestHandler):
 
     def get(self):
         title = "Overtune"
-        template_var = {"TITLE": title, "HOME": "class=\"selected\""}
+        template_var = {"TITLE": title, "INSTRUMENTS": "class=\"selected\""}
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.out.write(template.render(template_var))
 
 
-class ProjectHandler(webapp2.RequestHandler):
+class TunerHandler(webapp2.RequestHandler):
 
     def get(self):
-        title = "Projects"
-        template_var = {"TITLE": title, "PROJECTS": "class=\"current\""}
-        template = JINJA_ENVIRONMENT.get_template('projects.html')
+        title = "Tuning Box"
+        template_var = {"TITLE": title, "TUNER": "class=\"selected\""}
+        template = JINJA_ENVIRONMENT.get_template('tuningbox.html')
         self.response.out.write(template.render(template_var))
 
 
-class RandomHandler(webapp2.RequestHandler):
+class MetroHandler(webapp2.RequestHandler):
 
     def get(self):
-        title = "Random Things"
-        template_var = {"TITLE": title, "RANDOMS": "class=\"current\""}
-        template = JINJA_ENVIRONMENT.get_template('randoms.html')
+        title = "Metronome"
+        template_var = {"TITLE": title, "METRO": "class=\"selected\""}
+        template = JINJA_ENVIRONMENT.get_template('metronome.html')
         self.response.out.write(template.render(template_var))
 
 
-class ContactHandler(webapp2.RequestHandler):
+class InstrumentHandler(webapp2.RequestHandler):
 
     def get(self):
-        title = "Contact me"
-        template_var = {"TITLE": title, "CONTACT": "class=\"current\""}
-        template = JINJA_ENVIRONMENT.get_template('contact.html')
-        self.response.out.write(template.render(template_var))
-
-
-class EventifyHandler(webapp2.RequestHandler):
-
-    def get(self):
-        title = "Eventify"
-        template_var = {"TITLE": title, "PROJECTS": "class=\"current\""}
-        template = JINJA_ENVIRONMENT.get_template('eventify.html')
-        self.response.out.write(template.render(template_var))
+        self.response.out.write(self.request.path)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/index', MainHandler),
-    ('/projects', ProjectHandler),
-    ('/randoms', RandomHandler),
-    ('/contact', ContactHandler),
-    ('/eventify', EventifyHandler)
+    ('/tuner', TunerHandler),
+    ('/metro', MetroHandler),
+    ('/instruments/.*', InstrumentHandler)
 ], debug=True)

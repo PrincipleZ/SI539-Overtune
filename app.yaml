@@ -1,4 +1,4 @@
-application: overtune
+application: si539overtune
 version: 1
 runtime: python27
 api_version: 1
@@ -26,7 +26,7 @@ handlers:
 
 - url: /sounds
   static_dir: sounds
-  
+
 - url: /audioplayerengine
   static_dir: audioplayerengine
 

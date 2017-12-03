@@ -1,14 +1,16 @@
+
 section {
 	width: 800px;
 	text-align: center;
 	margin: 0 auto;
-	padding-top: 40px;
+	padding-top: 80px;
 }
-h3{
+p{
 	color: #999999;
 	font-size: 24px;
 	font-weight: normal;
 	letter-spacing: 4px;
+	margin: 0;
 }
 #showTempo{
 	display: block;
@@ -20,7 +22,7 @@ h3{
 	width: 300px;
 	margin-bottom: 50px;
 }
-#playBox{
+#center{
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
@@ -31,14 +33,18 @@ h3{
 	filter:alpha(opacity=80);
 	margin-bottom: 50px;
 }
-#playBox:hover {
+#center:hover {
 	opacity:1;
 	filter:alpha(opacity=100);
 }
-#playBox img{
+#center img{
 	position: relative;
-	top: 22px;
-	left: 5px;
+	top: 9px;
+	left: 4px;
+}
+#resolutionBox{
+	margin-top: 80px;
+	margin-bottom: 80px;
 }
 select{
 	width: 168px;
@@ -46,8 +52,24 @@ select{
 	background: -webkit-linear-gradient(left, #9697a1, #7c8293); 
 	color: white;
 	font-size: 18px;
-	font-family: Calibri;
+	font-family: Calibri， sans-serif;
 }
 select option{
 	background: -webkit-linear-gradient(left, #9697a1, #7c8293); 
 }
+
+
+@media screen and (max-width:800px){
+	section{
+		width: 100%;
+	}
+}
+@media screen and (max-width:540px){
+	section{
+		width: 300px;
+	}
+	.moon{
+		display: none;
+	}
+}
+

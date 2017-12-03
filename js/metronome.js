@@ -1,35 +1,16 @@
 var audioContext = null;
-var isPlaying = false;      // Are we currently playing?
-var startTime;              // The start time of the entire sequence.
-var current16thNote;        // What note is currently last scheduled?
-var tempo = 120.0;          // tempo (in beats per minute)
-var lookahead = 25.0;       // How frequently to call scheduling function 
-                            //(in milliseconds)
-var scheduleAheadTime = 0.1;    // How far ahead to schedule audio (sec)
-                            // This is calculated from lookahead, and overlaps 
-                            // with next interval (in case the timer is late)
-var nextNoteTime = 0.0;     // when the next note is due.
-var noteResolution = 0;     // 0 == 16th, 1 == 8th, 2 == quarter note
-var noteLength = 0.05;      // length of "beep" (in seconds)
-var canvas,                 // the canvas element
-    canvasContext;          // canvasContext is the canvas' context 2D
-var last16thNoteDrawn = -1; // the last "box" we drew on the screen
-var notesInQueue = [];      // the notes that have been put into the web audio,
-                            // and may or may not have played yet. {note, time}
-var timerWorker = null;     // The Web Worker used to fire timer messages
+var isPlaying = false;
+var startTime;
+var current16thNote;
+var tempo = 120.0;  
+var lookahead = 25.0;       
+var scheduleAheadTime = 0.1;
+var nextNoteTime = 0.0;
+var noteResolution = 0;     
+var noteLength = 0.05;
+var notesInQueue = [];   
+var timerWorker = null;  
 
-
-// First, let's shim the requestAnimationFrame API, with a setTimeout fallback
-window.requestAnimFrame = (function(){
-    return  window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    window.oRequestAnimationFrame ||
-    window.msRequestAnimationFrame ||
-    function( callback ){
-        window.setTimeout(callback, 1000 / 60);
-    };
-})();
 
 function nextNote() {
     // Advance current note and time by a 16th note...
@@ -49,7 +30,7 @@ function scheduleNote( beatNumber, time ) {
 
     if ( (noteResolution==1) && (beatNumber%2))
         return; // we're not playing non-8th 16th notes
-    if ( (noteResolution==2) && (beatNumber%4))
+    if ( (noteResolution==0) && (beatNumber%4))
         return; // we're not playing non-quarter 8th notes
 
     // create an oscillator
@@ -82,59 +63,16 @@ function play() {
         current16thNote = 0;
         nextNoteTime = audioContext.currentTime;
         timerWorker.postMessage("start");
-        return "stop";
+        document.getElementById("playBox_icon").src = "img/stop.png"
+        // return "stop";
     } else {
         timerWorker.postMessage("stop");
-        return "play";
+        document.getElementById("playBox_icon").src = "img/play.png"
+        // return "play";
     }
-}
-
-function resetCanvas (e) {
-    // resize the canvas - but remember - this clears the canvas too.
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    //make sure we scroll to the top left.
-    window.scrollTo(0,0); 
-}
-
-function draw() {
-    var currentNote = last16thNoteDrawn;
-    var currentTime = audioContext.currentTime;
-
-    while (notesInQueue.length && notesInQueue[0].time < currentTime) {
-        currentNote = notesInQueue[0].note;
-        notesInQueue.splice(0,1);   // remove note from queue
-    }
-
-    // We only need to draw if the note has moved.
-    if (last16thNoteDrawn != currentNote) {
-        var x = Math.floor( canvas.width / 18 );
-        canvasContext.clearRect(0,0,canvas.width, canvas.height); 
-        for (var i=0; i<16; i++) {
-            canvasContext.fillStyle = ( currentNote == i ) ? 
-                ((currentNote%4 === 0)?"red":"blue") : "black";
-            canvasContext.fillRect( x * (i+1), x, x/2, x/2 );
-        }
-        last16thNoteDrawn = currentNote;
-    }
-
-    // set up to draw again
-    requestAnimFrame(draw);
 }
 
 function init(){
-    var container = document.createElement( 'div' );
-
-    container.className = "container";
-    canvas = document.createElement( 'canvas' );
-    canvasContext = canvas.getContext( '2d' );
-    canvas.width = window.innerWidth; 
-    canvas.height = window.innerHeight; 
-    document.body.appendChild( container );
-    container.appendChild(canvas);    
-    canvasContext.strokeStyle = "#ffffff";
-    canvasContext.lineWidth = 2;
 
     // NOTE: THIS RELIES ON THE MONKEYPATCH LIBRARY BEING LOADED FROM
     // Http://cwilso.github.io/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js
@@ -143,18 +81,11 @@ function init(){
 
     audioContext = new AudioContext();
 
-    // if we wanted to load audio files, etc., this is where we should do it.
-
-    window.onorientationchange = resetCanvas;
-    window.onresize = resetCanvas;
-
-    requestAnimFrame(draw);    // start the drawing loop.
-
-    timerWorker = new Worker("metronomeworker.js");
+    timerWorker = new Worker("js/metronomeworker.js");
 
     timerWorker.onmessage = function(e) {
         if (e.data == "tick") {
-            // console.log("tick!");
+
             scheduler();
         }
         else
