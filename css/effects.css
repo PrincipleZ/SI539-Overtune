@@ -188,6 +188,9 @@ margin-top: 25px;
 	padding-top: 0px;
 	font-size: 18px;
 }
+.formobileview{
+	display: none;
+}
 
 @media screen and (max-width: 800px){
 	.playtune{
@@ -204,8 +207,14 @@ margin-top: 25px;
 		display: block;
 		margin: 0 auto;
 	}
-	.instrumentpicture{
+	.formobileview{
+	display: block;
+	}
+	.forlargeview{
 		display: none;
+	}
+	.instrumentpicture{
+		width: 80px;
 	}
 }
 

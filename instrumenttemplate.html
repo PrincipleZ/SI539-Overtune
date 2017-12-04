@@ -79,8 +79,11 @@
   <div class="holder item2"></div>
 </div>
 <section class="playtune">
-    <section class="videolist" style="
-    float: left;">
+    <div class="formobileview">
+        <img class="instrumentpicture" src="{{INSTRUMENT_PIC}}" >
+        <h3> {{INSTRUMENT}} </h3>
+    </div>
+    <section class="videolist">
       <p>RANGE 
         <div class="tagcontent"><div class="tag1" style="{{TAG1_STYLE}}">{{ RANGE_LOW }}</div><div class="tag2" style="{{TAG2_STYLE}}">{{RANGE_HIGH}}</div><div>
         <div id="bar"><div id="range" style = "{{RANGE_STYLE}}"></div></div></p>
@@ -114,9 +117,10 @@
 
 </div>
 </section>
-
+    <div class="forlargeview">
     <img class="instrumentpicture" src="{{INSTRUMENT_PIC}}" >
     <h3> {{INSTRUMENT}} </h3>
+    </div>
 </section>
 
         <section class="et-hero-tabs">
