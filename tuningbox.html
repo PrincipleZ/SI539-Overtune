@@ -14,11 +14,14 @@
 {% block content%}
     <section>
       <h1>GUITAR TUNER</h1>
-      <div><h3>LOOP:<label><input id="loop" class="mui-switch mui-switch-animbg" type="checkbox"></label></h3></div>
+      <div><p>LOOP:<label><input id="loop" class="mui-switch mui-switch-animbg" type="checkbox"></label></p></div>
     </section>
 
     <section class="playtune">
-      <img src="img/guitar.png">
+
+      <img class="largeviewimg" src="img/guitar.png" alt="guitar">
+      <img class="mobileviewimg" src="img/guitar_mobile.png" alt="guitar">
+
       <div class="left">
         <div class="play" id="playD">D
           <audio id="D" preload="auto" onended="checkLoop($(this))">
@@ -33,6 +36,7 @@
             <source src="sounds/6th_string_e.mp3" type="audio/mpeg">
           </audio></div>
       </div>
+
       <div class="right">
         <div class="play" id="playG">G
           <audio id="G" preload="auto" onended="checkLoop($(this))">
@@ -47,6 +51,7 @@
             <source src="sounds/1st_string_e.mp3" type="audio/mpeg">
           </audio></div>
       </div>
+
     </section>
 {% endblock %}
   
