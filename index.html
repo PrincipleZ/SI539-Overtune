@@ -12,6 +12,7 @@
       var show = false;
       $(document).ready(function(){
         $(".menu-icon").on("click", function(){
+          $(".logo").remove();
           $(".large_nav").slideToggle(300);
           })
         })
@@ -30,8 +31,8 @@
             <div></div>
             <div></div>
           </div>
-            <a class="logo" href="/"><img src="img/logo.png" alt="logo"></a>
           <div class="large_nav">
+            <li class="logo"><a href="/"><img src="img/logo.png" alt="logo"></a></li>
             <li {{INSTRUMENTS}}><a href="/">INSTRUMENTS</a></li>
             <li {{TUNER}}><a href="/tuner">TUNING BOX</a></li>
             <li {{METRO}}><a href="/metro">METRONOME</a></li>
