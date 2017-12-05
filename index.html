@@ -7,17 +7,35 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/hover.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      var show = false;
+      $(document).ready(function(){
+        $(".menu-icon").on("click", function(){
+          $(".large_nav").slideToggle(300);
+          })
+        })
+    </script>
     {% block style %}
     {% endblock %}
   </head>
   <body>
     <header>
       <nav>
+        <a class ="mobile" href="/"><img src="img/logo_mobile.png" alt="logo"></a>
+
         <ul>
-          <li class="logo"><a href="/"><img src="img/logo.png" alt="logo"></a></li>
-          <li {{INSTRUMENTS}}><a href="/">INSTRUMENTS</a></li>
-          <li {{TUNER}}><a href="/tuner">TUNING BOX</a></li>
-          <li {{METRO}}><a href="/metro">METRONOME</a></li>
+          <div class="menu-icon">
+            <div></div>        
+            <div></div>
+            <div></div>
+          </div>
+            <a class="logo" href="/"><img src="img/logo.png" alt="logo"></a>
+          <div class="large_nav">
+            <li {{INSTRUMENTS}}><a href="/">INSTRUMENTS</a></li>
+            <li {{TUNER}}><a href="/tuner">TUNING BOX</a></li>
+            <li {{METRO}}><a href="/metro">METRONOME</a></li>
+          </div>
         </ul>    
       </nav>
     </header>

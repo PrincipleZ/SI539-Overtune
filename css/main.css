@@ -19,6 +19,7 @@ nav ul {
 	list-style-type: none;
 	margin:0px;
 	padding: 0px;
+	width:100vw;
 }
 nav li {
 	display: inline-block;
@@ -35,6 +36,9 @@ nav li {
 	text-align: left;
 	width: 300px;
 }
+.mobile{
+	display: none;
+}
 nav li a{
 	color: white;
 	text-decoration: none;
@@ -46,6 +50,9 @@ footer{
 	color: grey;
 }
 
+.menu-icon{
+	display: none;
+}
 
 nav li:hover {
 	filter: glow(color:white, strength=0);
@@ -56,4 +63,60 @@ nav li:hover {
 }
 .selected {
 	background-image: url(../img/hoverli.png);
+}
+
+@media screen and (max-width: 800px){
+	 
+	 
+}
+
+@media screen and (max-width: 540px){
+  .mobile{
+	 	width: 200px;
+	 	display: inline-block;
+	 	position:absolute;
+	 	left:20px;
+	 	top:12px;
+	 }
+	 .menu-icon{
+        position: absolute;
+        top: 26px;
+        right:30px;
+        display: inline-block;
+        z-index:9;
+    }
+    .menu-icon div{
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        margin: 6px 0;
+        opacity: 0.6;
+        border-radius: 10px;
+    }
+    .large_nav{
+    	display: none;
+    	position: relative;
+    	top:80px;
+    	right:0;
+    	z-index: 10;
+    }
+    .large_nav li{
+    	display: block;
+    	width:100%;
+    	position:relative;
+    	height:70px;
+    	text-align: center;
+/*        background: -webkit-linear-gradient(left, #91939F, #747c8f); */
+		background: -webkit-linear-gradient(left, #bcb6b6, #747c8f);
+        line-height: 70px;
+        top:0;
+    }
+    .logo{
+	 	display:none;
+	 }
+	 .selected{
+	 	background-image: none;
+	 	filter: glow(color:white, strength=0);
+		text-shadow: 1px 1px 10px white;
+	 }
 }

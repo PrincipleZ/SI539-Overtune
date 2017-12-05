@@ -166,7 +166,7 @@ h5{
     transition: left 0.3s ease;
 }
 
-@media screen and (max-width: 800px) {
+@@media screen and (max-width: 800px) {
   .et-hero-tabs,
   .et-slide{
     h1{
@@ -185,7 +185,6 @@ flex-wrap: wrap;}
 display: block;
 }
   .et-hero-tabs{
-    margin-top: -150px;
   }
 
 }
@@ -205,13 +204,21 @@ flex-flow: column;
 display: inline;
 }
 .et-hero-tabs-container{
-  min-width: 250px;  
+/*min-width: 250px;  
   text-align: center;
   position: absolute;
   flex-wrap: wrap;
   display: flex;
   flex-direction: column;
-  order: 1;
+  order: 1;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    position: relative;
+    text-align: center;
+    padding: 0 2em;
 }
 h5{
   display: none;
@@ -226,3 +233,5 @@ h5{
       margin: auto;
       min-width: 50px;
     }
+
+}
