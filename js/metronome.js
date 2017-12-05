@@ -1,3 +1,5 @@
+// Retrived from https://github.com/cwilso/metronome at Nov.23.2017
+// Modified by Di Yao
 var audioContext = null;
 var isPlaying = false;
 var startTime;
