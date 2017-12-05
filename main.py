@@ -22,6 +22,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(
         os.path.dirname(__file__)))
 
+template_var = {}
 
 violin_dict = {
     "TITLE": "VIOLIN",
@@ -55,11 +56,101 @@ violin_dict = {
     "INSTRUMENT_PIC": "img/violin1.png",
     "INTRODUCTION": "A wooden string instrument in the violin family: the smallest and highest-pitched instrument."
 }
-guitar_dict = {}
+guitar_dict = {
+    "TITLE": "GUITAR",
+    "INSTRUMENT": "GUITAR",
+    "INSTRUMENTS": "class=\"selected\"",
+    "AUDIO1": "sounds/guitar/notes/1.mp3",
+    "AUDIO2": "sounds/guitar/notes/2.mp3",
+    "AUDIO3": "sounds/guitar/notes/3.mp3",
+    "AUDIO4": "sounds/guitar/notes/4.mp3",
+    "AUDIO5": "sounds/guitar/notes/5.mp3",
+    "AUDIO6": "sounds/guitar/notes/6.mp3",
+    "AUDIO7": "sounds/guitar/notes/7.mp3",
+    "AUDIO8": "sounds/guitar/notes/8.mp3",
+    "RANGE_LOW": "E2",
+    "RANGE_HIGH": "E6",
+    "VIDEO0": "https://www.youtube.com/watch?v=qv23U4uNaU8",
+    "VIDEO1": "https://www.youtube.com/watch?v=6ny8htqHHuM",
+    "VIDEO2": "https://www.youtube.com/watch?v=t5iz41Hk_wI",
+    "THUMBNAIL0": "img/thumbnails/guitar_01.png",
+    "THUMBNAIL1": "img/thumbnails/guitar_02.png",
+    "THUMBNAIL2": "img/thumbnails/guitar_03.png",
+    "TITLE0": "Solo Acoustic Guitar",
+    "MUSIC0": "sounds/guitar/music/0.mp3",
+    "TITLE1": "A Garden and A Library",
+    "MUSIC1": "sounds/guitar/music/1.mp3",
+    "TITLE2": "A Stranger's Map of Texas",
+    "MUSIC2": "sounds/guitar/music/2.mp3",
+    "TAG1_STYLE": "left:42px;",
+    "TAG2_STYLE": "left:174px;",
+    "RANGE_STYLE": "margin-left: 20%;",
+    "INSTRUMENT_PIC": "img/guitar1.png",
+    "INTRODUCTION": "The guitar is a fretted musical instrument that usually has six strings. The sound is projected either acoustically, using a hollow wooden or plastic and wood box, or through electrical amplifier and a speaker."}
 harp_dict = {}
 trumpet_dict = {}
-piano_dict = {}
-eguitar_dict = {}
+piano_dict = {
+    "TITLE": "PIANO",
+    "INSTRUMENT": "PIANO",
+    "INSTRUMENTS": "class=\"selected\"",
+    "AUDIO1": "sounds/piano/notes/1.mp3",
+    "AUDIO2": "sounds/piano/notes/2.mp3",
+    "AUDIO3": "sounds/piano/notes/3.mp3",
+    "AUDIO4": "sounds/piano/notes/4.mp3",
+    "AUDIO5": "sounds/piano/notes/5.mp3",
+    "AUDIO6": "sounds/piano/notes/6.mp3",
+    "AUDIO7": "sounds/piano/notes/7.mp3",
+    "AUDIO8": "sounds/piano/notes/8.mp3",
+    "RANGE_LOW": "A0",
+    "RANGE_HIGH": "B7",
+    "VIDEO0": "https://www.youtube.com/watch?v=oAXXSFKfjLs",
+    "VIDEO1": "https://www.youtube.com/watch?v=7maJOI3QMu0",
+    "VIDEO2": "https://www.youtube.com/watch?v=0V_-DQdUvGQ",
+    "THUMBNAIL0": "img/thumbnails/piano_01.png",
+    "THUMBNAIL1": "img/thumbnails/piano_02.png",
+    "THUMBNAIL2": "img/thumbnails/piano_03.png",
+    "TITLE0": "To Elise",
+    "MUSIC0": "sounds/piano/music/0.mp3",
+    "TITLE1": "Chopin nocturnes Op.9 No.2",
+    "MUSIC1": "sounds/piano/music/1.mp3",
+    "TITLE2": "Bach - Prelude and Fugue in C",
+    "MUSIC2": "sounds/piano/music/2.mp3",
+    "TAG1_STYLE": "left:-18px;",
+    "TAG2_STYLE": "left:234px;",
+    "RANGE_STYLE": "width: 100%;margin-left: 0;",
+    "INSTRUMENT_PIC": "img/piano1.png",
+    "INTRODUCTION": "The piano is an acoustic, stringed musical instrument invented in Italy by Bartolomeo Cristofori around the year 1700, in which the strings are struck by hammers."}
+eguitar_dict = {
+    "TITLE": "EGUITAR",
+    "INSTRUMENT": "ELECTRONIC<br>GUITAR",
+    "INSTRUMENTS": "class=\"selected\"",
+    "AUDIO1": "sounds/electric_guitar/notes/1.mp3",
+    "AUDIO2": "sounds/electric_guitar/notes/2.mp3",
+    "AUDIO3": "sounds/electric_guitar/notes/3.mp3",
+    "AUDIO4": "sounds/electric_guitar/notes/4.mp3",
+    "AUDIO5": "sounds/electric_guitar/notes/5.mp3",
+    "AUDIO6": "sounds/electric_guitar/notes/6.mp3",
+    "AUDIO7": "sounds/electric_guitar/notes/7.mp3",
+    "AUDIO8": "sounds/electric_guitar/notes/8.mp3",
+    "RANGE_LOW": "E2",
+    "RANGE_HIGH": "E6",
+    "VIDEO0": "https://www.youtube.com/watch?v=l_NoccF3RaI",
+    "VIDEO1": "https://www.youtube.com/watch?v=4iV2LsHRDJE",
+    "VIDEO2": "https://www.youtube.com/watch?v=Yjarkl3VWPE",
+    "THUMBNAIL0": "img/thumbnails/eguitar_01.png",
+    "THUMBNAIL1": "img/thumbnails/eguitar_02.png",
+    "THUMBNAIL2": "img/thumbnails/eguitar_03.png",
+    "TITLE0": "Hotel California",
+    "MUSIC0": "sounds/electric_guitar/music/0.mp3",
+    "TITLE1": "Anagnorisis",
+    "MUSIC1": "sounds/electric_guitar/music/1.mp3",
+    "TITLE2": "Linger",
+    "MUSIC2": "sounds/electric_guitar/music/2.mp3",
+    "TAG1_STYLE": "left:42px;",
+    "TAG2_STYLE": "left:174px;",
+    "RANGE_STYLE": "margin-left: 20%;",
+    "INSTRUMENT_PIC": "img/electronicguitar1.png",
+    "INTRODUCTION": "An electric guitar is a fretted stringed instrument with a neck and body that uses a pickup to convert the vibration of its strings into electrical signals. The vibration occurs when a guitarist strums, plucks, fingerpicks, or taps the strings."}
 accordion_dict = {}
 sax_dict = {}
 
@@ -107,10 +198,13 @@ class InstrumentHandler(webapp2.RequestHandler):
     def get(self):
         instrument_name = self.request.path[1:]
         print instrument_name
-
-        template_var = violin_dict
+        if instrument_name in instruments_dict:
+            template_var = instruments_dict[instrument_name]
         template = JINJA_ENVIRONMENT.get_template('instrumenttemplate.html')
-        self.response.out.write(template.render(template_var))
+        try:
+            self.response.out.write(template.render(template_var))
+        except:
+            self.redirect("/")
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),

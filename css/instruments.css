@@ -166,10 +166,10 @@ h5{
     transition: left 0.3s ease;
 }
 
-@media (min-width: 800px) {
+@media screen and (max-width: 800px) {
   .et-hero-tabs,
-  .et-slide {
-    h1 {
+  .et-slide{
+    h1{
         font-size: 3rem;
     }
     h3 {
@@ -177,6 +177,52 @@ h5{
     }
   }
   .et-hero-tab {
-    font-size: 1rem;
-  }
+    margin: 10px 1% 0 1%;
+    width:  calc(25% - 2%);
+    height: 150px;
+flex-wrap: wrap;}
+  .playtune{
+display: block;
 }
+  .et-hero-tabs{
+    margin-top: -150px;
+  }
+
+}
+
+@media screen and (max-width: 540px) {
+.scalecontainer{
+  display: inline-block;
+  margin-top: -600px;}
+.holder:before{
+  padding-top: 90%;
+}
+.play{
+  display: inline;
+}
+.et-hero-tab {
+flex-flow: column;
+display: inline;
+}
+.et-hero-tabs-container{
+  min-width: 250px;  
+  text-align: center;
+  position: absolute;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  order: 1;
+}
+h5{
+  display: none;
+}
+.playtune{
+  margin-top: -700px;
+}
+.centeredinstrument{
+      z-index: 20;
+      /*position:absolute;*/
+      display: inline-block;
+      margin: auto;
+      min-width: 50px;
+    }
