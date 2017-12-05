@@ -1,3 +1,4 @@
+// Retrived from https://github.com/cwilso/metronome at Nov.23.2017
 var timerID=null;
 var interval=100;
 
