@@ -10,13 +10,13 @@
 {% block content%}
 
     <section>
-      <div id="tempoBox"><p>TEMPO</p> <span id="showTempo">120</span><p>BPM</p> 
-        <input id="tempo" type="range" min="30.0" max="160.0" step="1" value="120" onInput="tempo = event.target.value; document.getElementById('showTempo').innerText=tempo; start(tempo);">
+      <div id="tempoBox"><p>TEMPO</p> <span id="showTempo">120</span><label><p>BPM</p> 
+        <input id="tempo" type="range" min="30.0" max="160.0" step="1" value="120" onInput="tempo = event.target.value; document.getElementById('showTempo').innerText=tempo; start(tempo);"></label>
       </div>
 
       <a class="play" onclick="play(); start(tempo);"><div id="center" class="orbit-center"><img src="img/play.png" alt="play", id = "playBox_icon"></div></a>
 
-      <div id="resolutionBox"><p>RESOLUTION</p><select onchange="noteResolution = this.selectedIndex;"><option>Quarter notes<option>8th notes<option>16th notes</select></div>
+      <div id="resolutionBox"><label><p>RESOLUTION</p><select onchange="noteResolution = this.selectedIndex;"><option>Quarter notes<option>8th notes<option>16th notes</select></label></div>
 
       <span class="moonSelector"></span>
       <span class="moonSelector"></span>

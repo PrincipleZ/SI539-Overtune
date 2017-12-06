@@ -11,6 +11,13 @@ h1{
   font-weight: normal;
   letter-spacing: 2px;
 }
+.alert{
+  font-family: Calibri, sans-serif;
+  font-size: 15px;
+  margin-top: 0px;
+  letter-spacing: 0;
+  opacity: 0.6;
+}
 p{
   color: #999999;
   font-size: 18px;

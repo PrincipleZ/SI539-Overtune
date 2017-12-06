@@ -161,3 +161,25 @@
         animation: boom 0.1s cubic-bezier(0.16, 0.83, 0.35, 0.98) forwards;;
         -webkit-animation: boom 0.1s cubic-bezier(0.16, 0.83, 0.35, 0.98) forwards;;
     }
+
+@media screen and (max-width: 800px){
+    footer{
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+    }
+    .field{
+        width: 77vw;
+        grid-template-columns: repeat(7, 11vw);
+        grid-template-rows: repeat(10, 8vw);
+
+
+    }
+}
+
+@media screen and (max-width: 540px){
+    .field{
+        grid-template-rows: repeat(10, 9vw);
+
+    }
+}

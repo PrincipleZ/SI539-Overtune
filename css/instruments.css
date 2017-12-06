@@ -166,7 +166,8 @@ h5{
     transition: left 0.3s ease;
 }
 
-@@media screen and (max-width: 800px) {
+
+@media screen and (max-width: 800px) {
   .et-hero-tabs,
   .et-slide{
     h1{
@@ -186,15 +187,23 @@ display: block;
 }
   .et-hero-tabs{
   }
-
+  footer{
+    position: relative;
+    bottom: 0;
+  }
 }
 
 @media screen and (max-width: 540px) {
 .scalecontainer{
   display: inline-block;
-  margin-top: -600px;}
+  margin-top: -600px;
+text-align: center;}
+
 .holder:before{
   padding-top: 90%;
+}
+#seven{
+  display: none;
 }
 .play{
   display: inline;
@@ -202,6 +211,11 @@ display: block;
 .et-hero-tab {
 flex-flow: column;
 display: inline;
+margin: 0;
+
+}
+.et-hero-tabs{
+  padding-top: 85px;
 }
 .et-hero-tabs-container{
 /*min-width: 250px;  
@@ -211,14 +225,14 @@ display: inline;
   display: flex;
   flex-direction: column;
   order: 1;*/
-    display: flex;
+    display: table;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
     position: relative;
     text-align: center;
     padding: 0 2em;
+    padding-top: 30px;
 }
 h5{
   display: none;
@@ -231,7 +245,68 @@ h5{
       /*position:absolute;*/
       display: inline-block;
       margin: auto;
-      min-width: 50px;
+      min-width: 40px;
     }
+.et-hero-tab {
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    
+    color: #000;
+    letter-spacing: 0.1rem;
+    transition: all 0.5s ease;
+    font-size: 0.8rem;
+    color:white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: table-row;
+}
+ #one{
+  display: inline-block;
+  float: left;
+  width: 25%;
 
 }
+#two{
+  display: inline-block;
+  float: right;
+  width: 25%;
+
+}
+#three{
+  display: inline-block;
+  float: right;
+  width: 25%;
+
+}
+#four{
+  display: inline-block;
+  float: right;
+  width: 25%;
+
+}
+#five{
+  display: inline-block;
+  float: left;
+  width: 25%;
+
+}
+#six{
+  display: inline-block;
+  float: right;
+  width: 25%;
+
+}
+#seven{
+  display: inline-block;
+  float: right;
+  width: 25%;
+
+}#eight{
+  display: inline-block;
+  float: right;
+  width: 25%;
+
+}}
+
+
