@@ -187,6 +187,9 @@ label, input, select{
 }
 
 @media screen and (max-width: 540px){
+  footer{
+    position: relative;
+  }
   .largeviewimg{
     display: none;
   }
